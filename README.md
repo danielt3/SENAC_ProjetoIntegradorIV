@@ -33,15 +33,37 @@ quis tincidunt est. Suspendisse eu facilisis lorem, quis lobortis nunc.
 
 ### Preparação do ambiente
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-Sed facilisis feugiat metus, sed facilisis elit mattis sed. Praesent libero enim, pretium non
-magna in, lobortis ornare tortor. Duis mattis augue nulla, ut sollicitudin nisi tempor id.
-Vestibulum facilisis sollicitudin gravida. Maecenas gravida, est at mattis euismod, lectus
-sapien vestibulum elit, ut gravida justo nisi ut magna. Vivamus a leo ac sem viverra mattis
-maximus nec urna. Cras viverra id quam id semper. Vivamus volutpat viverra lacus vel aliquet.
-Integer a sem dui. Suspendisse at gravida elit. Etiam luctus id ipsum finibus ornare. Fusce eget
-ipsum quis turpis elementum ultrices. Integer lobortis est eu lorem gravida vehicula. Integer
-vestibulum tempor cursus. Sed et malesuada erat, in posuere erat. 
+Como será mostrado, apesar de não usarmos a mesma configuração exata nos ambientes de
+desenvolvimento e no servidor, foram utilizadas versões de software muito próximas
+o que evitou problemas de compatibilidade e foi suficiente para o desenvolvimento
+transcorrer sem grandes problemas.
+
+#### Ambiente de desenvolvimento
+
+Os ambientes de desenvolvimento de cada desenvolvedor são computadores notebooks ou
+desktops com processador Intel i5/i7 ou AMD compativeis com arquitetura x86_64 e com
+sistema operacional Windows 10 ou 11 instalado. Assim, optou-se pela seguinte
+configuração de software para desenvolvimento:
+
+* Visual Studio Code para codificação;
+* UwAmp 3.1.0 com interpretador PHP+MySQL+Apache.
+
+O UwAmp contém os seguintes softwares em seu pacote:
+
+* PHP 7.2.7
+* MySQL 5.7.11
+* Apache 2.4
+
+#### Ambiente de servidor
+
+Foi utilizado um servidor hospedado pelo UOL para prover o serviço aos usuários.
+O servidor tem as seguintes configurações:
+
+* Sistema Operacional Linux
+* Apache 2.4
+* PHP 7.3
+* SSH habilitado
+* MySQL 5.6
 
 ### Frontend
 
@@ -67,7 +89,7 @@ venenatis. Nam ut placerat ipsum. Quisque consectetur eleifend efficitur.
 
 ## Video
 
-O video de apresentação do projeto está neste link: (https://youtube.com)[https://youtube.com].
+O video de apresentação do projeto está neste (link)[https://www.youtube.com].
 
 ## Github
 
