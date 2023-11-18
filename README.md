@@ -89,7 +89,7 @@ venenatis. Nam ut placerat ipsum. Quisque consectetur eleifend efficitur.
 
 ## Video
 
-O video de apresentação do projeto está neste (link)[https://www.youtube.com].
+O video de apresentação do projeto está neste [link](https://www.youtube.com).
 
 ## Github
 
