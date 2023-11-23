@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff; 
+        }
+
+        .search-page {
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 30%; 
+            height: auto;
+        }
+
+        .search-box {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        #search-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            font-family: "Arial", sans-serif;
+            font-weight: lighter;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-page">
+        <div class="header">
+            <img src="descartamed.png" alt="Logo" class="logo">
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Digite o local desejado">
+            <button id="search-button" onclick="searchLocations()">Pesquisar</button>
+        </div>
+        <div id="search-result" class="result"></div>
+
+        <script>
+           
+            const locations = [
+                { name: "Bourbon Shopping Ipiranga", address: "Av. Ipiranga, 5200 - Loja 146 - Jardim Carvalho, Porto Alegre - RS, 90610-000" },
+                { name: "UFRGS - Farmácia Popular do Brasil", address: "Av. Ipiranga, 5200 - Loja 146 - Jardim Carvalho, Porto Alegre - RS, 90610-000" },
+                { name: "Panvel - Mont Serrat", address: "Av. Ipiranga, 5200 - Loja 146 - Jardim Carvalho, Porto Alegre - RS, 90610-000" }
+            ];
+
+            function searchLocations() {
+                const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+                
+                const results = locations.filter(location =>
+                    location.name.toLowerCase().includes(searchTerm) || location.address.toLowerCase().includes(searchTerm)
+                );
+
+                displayResults(results);
+            }
+
+            function displayResults(results) {
+                const resultContainer = document.getElementById('search-result');
+
+                if (results.length === 0) {
+                    resultContainer.innerHTML = 'Nenhum resultado encontrado.';
+                } else {
+                    const resultHTML = results.map(location =>
+                        `<p><strong>${location.name}</strong><br>${location.address}</p>
+                         <button onclick="showMap('${location.address}')">Ver no Mapa</button>`
+                    ).join('');
+
+                    resultContainer.innerHTML = resultHTML;
+                }
+            }
+
+            function showMap(address) {
+                window.open(`https://www.google.com/maps?q=${encodeURIComponent(address)}`, '_blank');
+            }
+        </script>
+    </div>
+</body>
+</html>
+
